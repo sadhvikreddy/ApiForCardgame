@@ -27,5 +27,9 @@ def home():
     }
     return jsonify(jsonObj)
 
+@app.route("/")
+def default():
+    return "App is live. make Api call @ /api"
+
 if __name__ == '__main__':
     app.run()
