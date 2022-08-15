@@ -25,11 +25,13 @@ def home():
         "d": str(result[3]),
         "e": str(result[4])
     }
-    return jsonify(jsonObj)
+    response = jsonify(jsonObj)
+    response.headers.add("Access-Control-Allow-Origin", "*") 
+    return response
 
 @app.route("/")
 def default():
-    return "App is live. make Api call @ /api"
+    return "App is live. make Api call at /api. this is build for a reaseach Project. contact developer for information."
 
 if __name__ == '__main__':
     app.run()
